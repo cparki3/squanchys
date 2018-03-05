@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "name": "Blips and Chitz",
+        "price": 10,
+        "desc": "Blips and Chits ticket. Can be used to redeem for a cheap stuffed Roy doll.",
+        "image": "images/food/blips.png",
+        "category": "Rick and Morty Item"
+    },
+    {
+        "id": 2,
+        "name": "Butter Robot",
+        "price": 600,
+        "desc": "Has no real purpose, except to pass delicious butter to you.",
+        "image": "images/food/butter.png",
+        "category": "Rick and Morty Item"
+    },
+    {
+        "id": 3,
+        "name": "Eyeholes",
+        "price": 40,
+        "desc": "Eat them in secret so Eyehole man can't find you.",
+        "image": "images/food/eyeholes.png",
+        "category": "Rick and Morty Item"
+    },
+    {
+        "id": 4,
+        "name": "Fleeb",
+        "price": 15,
+        "desc": "Squeeze it and it will secrete Fleeb juice.",
+        "image": "images/food/fleeb.png",
+        "category": "Rick and Morty Item"
+    },
+    {
+        "id": 5,
+        "name": "Mega Seed",
+        "price": 500,
+        "desc": "Apparently really good for great science, and painful to hide through interdimensional customs.",
+        "image": "images/food/mega_seed.png",
+        "category": "Rick and Morty Item"
+    },
+    {
+        "id": 6,
+        "name": "Meseeks Box",
+        "price": 1000,
+        "desc": "Life is pain, let Mr. Meseeks solve some SIMPLE task for you.",
+        "image": "images/food/meseeks.png",
+        "category": "Rick and Morty Item"
+    },
+    {
+        "id": 7,
+        "name": "Ordinary Pickle",
+        "price": 5,
+        "desc": "Definitely just a regular old pickle, no need for additional questions.",
+        "image": "images/food/pickle.png",
+        "category": "Rick and Morty Item"
+    },
+    {
+        "id": 8,
+        "name": "Smiggles",
+        "price": 3,
+        "desc": "So good, you will apparently eat them directly out of a leprechaun's stomach.",
+        "image": "images/food/smiggles.png",
+        "category": "Rick and Morty Item"
+    },
+    {
+        "id": 9,
+        "name": "Plumbus",
+        "price": 75,
+        "desc": "What's it for? If you have to ask, you shouldn't buy it.",
+        "image": "images/food/plumbus.png",
+        "category": "Rick and Morty Item"
+    }
+]

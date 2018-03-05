@@ -1,0 +1,563 @@
+html,
+body,
+ul,
+ol {
+  margin: 0;
+  padding: 0; }
+
+@font-face {
+  font-family: 'rick_and_morty';
+  src: url("http://localhost:3000/public/rick_and_morty_by_shittychan.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+body {
+  font-family: rick_and_morty;
+  font-size: 16px;
+  color: #333;
+  background: #2b2c2c; }
+
+* {
+  box-sizing: border-box; }
+
+::selection {
+  background: #12adc3;
+  color: #fff; }
+
+::-moz-selection {
+  background: #12adc3;
+  color: #fff;
+  text-shadow: none; }
+
+input[type=number] {
+  -moz-appearance: textfield;
+  margin: 0; }
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance: none; }
+
+strong {
+  font-weight: 700; }
+
+a {
+  text-decoration: none; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0; }
+
+ul {
+  list-style: none; }
+
+button {
+  height: 36px;
+  border-radius: 2px;
+  text-align: center;
+  color: #fff;
+  background: #12adc3;
+  border: 0;
+  font-weight: 400;
+  padding: 0 16px;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer; }
+  button:hover {
+    background: #1ed1ea; }
+  button:focus {
+    outline: none; }
+  button:active {
+    background: #35d6ec; }
+
+input,
+select {
+  font-size: inherit;
+  font-family: inherit; }
+
+form {
+  margin: 0; }
+
+header {
+  background: #000;
+  box-shadow: 0px 8px 15px rgba(65, 242, 175, 0.2);
+  border-bottom: 1px solid #12adc3;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  animation: slideUp 300ms linear; }
+  header .container {
+    display: flex;
+    display: -webkit-flex;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 32px; }
+  @media (max-width: 991px) {
+    header {
+      padding: 16px; }
+      header .container {
+        padding: 0; } }
+  @media (max-width: 480px) {
+    header {
+      padding: 8px 12px; } }
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(30px);
+    opacity: .5; }
+  100% {
+    transform: translateY(0);
+    opacity: 1; } }
+
+.brand .logo {
+  width: 280px; }
+
+.search {
+  margin-left: 30px;
+  padding-top: 35px;
+  flex-grow: 1;
+  -webkit-flex-grow: 1; }
+
+.search-form {
+  display: flex;
+  display: -webkit-flex; }
+  .search-form .search-keyword {
+    height: 36px;
+    border: 1px solid #12adc3;
+    padding: 0 16px;
+    border-radius: 10px 0 0 10px;
+    width: 100%;
+    max-width: 330px;
+    font-size: 20px;
+    padding-top: 5px; }
+    .search-form .search-keyword:focus {
+      outline: none; }
+    @media (max-width: 480px) {
+      .search-form .search-keyword {
+        height: 32px;
+        margin: 2px 0; } }
+  .search-form .search-button {
+    border-radius: 0 10px 10px 0;
+    width: 60px; }
+    @media (max-width: 480px) {
+      .search-form .search-button {
+        height: 32px;
+        margin: 2px 0; } }
+
+.cart {
+  display: flex;
+  display: -webkit-flex;
+  margin-left: 64px;
+  position: relative;
+  padding-top: 35px;
+  z-index: 99; }
+  @media (max-width: 991px) {
+    .cart {
+      margin-left: 16px; } }
+
+@media (max-width: 991px) {
+  .cart-info {
+    display: none; } }
+
+.cart-info table {
+  font-size: 20px;
+  color: #12adc3;
+  text-align: right; }
+  .cart-info table tr {
+    padding: 0;
+    margin: 0; }
+  .cart-info table td {
+    padding: 0 4px;
+    line-height: 16px; }
+
+.cart-icon {
+  margin-left: 0px;
+  z-index: 99;
+  position: relative; }
+
+@media (min-width: 992px) {
+  .cart-count {
+    display: none; } }
+
+@media (max-width: 991px) {
+  .cart-count {
+    display: block;
+    position: absolute;
+    background: #fc7710;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+    width: 24px;
+    border-radius: 50%;
+    top: -6px;
+    right: -9px; } }
+
+.cart-preview {
+  display: none;
+  background: #000;
+  border: 2px solid #12adc3;
+  border-radius: 10px; }
+  .cart-preview:before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: -9px;
+    right: 8px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #12adc3;
+    z-index: 1; }
+  .cart-preview:after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: -7px;
+    right: 9px;
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid #12adc3;
+    z-index: 1; }
+
+.cart-preview.active {
+  z-index: 99;
+  display: block;
+  position: absolute;
+  top: 48px;
+  right: 0;
+  width: 360px;
+  height: 388px;
+  box-shadow: 0px 8px 15px rgba(65, 242, 175, 0.2); }
+  @media (max-width: 400px) {
+    .cart-preview.active {
+      top: 45px;
+      width: 100%;
+      min-width: 300px; }
+      .cart-preview.active > div {
+        width: 100% !important; }
+      .cart-preview.active .cart-items {
+        width: 100%; }
+      .cart-preview.active .stepper-input a {
+        display: none; } }
+
+.action-block {
+  position: absolute;
+  bottom: 0;
+  padding: 16px;
+  width: 100%; }
+  .action-block button {
+    background: #fc7710;
+    font-size: 24px;
+    line-height: 45px;
+    display: block;
+    border-radius: 20px 20px 20px 20px;
+    width: 100%; }
+    .action-block button.disabled {
+      opacity: 0.3;
+      cursor: not-allowed; }
+
+.empty-cart {
+  text-align: center; }
+  .empty-cart img {
+    width: 100%;
+    max-width: 250px;
+    margin: 42px auto 16px auto; }
+  .empty-cart h2 {
+    color: #999;
+    font-size: 18px; }
+
+.cart-items {
+  height: 320px;
+  width: 361px; }
+
+.cart-item {
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  -webkit-align-items: center;
+  border-bottom: 1px solid #12adc3;
+  padding: 8px; }
+  .cart-item .product-image {
+    width: 48px;
+    height: 48px; }
+  .cart-item .product-info {
+    margin-left: 16px;
+    flex-grow: 1; }
+    .cart-item .product-info .product-name {
+      color: #12adc3;
+      font-size: 16px; }
+    .cart-item .product-info .product-price {
+      color: #12adc3;
+      font-weight: 700; }
+      .cart-item .product-info .product-price:after {
+        content: " Schmeckles"; }
+  .cart-item .product-total {
+    margin-left: 16px; }
+    .cart-item .product-total .quantity {
+      color: #fc7710;
+      font-size: 16px;
+      text-align: right; }
+    .cart-item .product-total .amount {
+      color: #12adc3;
+      font-weight: 700;
+      text-align: right; }
+      .cart-item .product-total .amount:after {
+        content: " Schmeckles"; }
+  .cart-item .product-remove {
+    margin-left: 10px;
+    margin-right: 5px;
+    height: 20px;
+    line-height: 20px;
+    width: 20px;
+    font-size: 22px;
+    color: #fff;
+    text-align: center;
+    background-color: #12adc3;
+    border-radius: 50%;
+    cursor: pointer; }
+
+.products-wrapper {
+  padding-top: 98px;
+  animation: slideUp 300ms linear;
+  animation-delay: 150ms; }
+  @media (max-width: 991px) {
+    .products-wrapper {
+      padding-top: 68px; } }
+  @media (max-width: 480px) {
+    .products-wrapper {
+      padding-top: 52px; } }
+
+.products {
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  padding: 16px;
+  max-width: 960px;
+  margin: 0 auto; }
+  .products .product {
+    min-height: 355px;
+    flex-basis: calc(25% - 32px);
+    -webkit-flex-basis: calc(25% - 32px); }
+
+.fadeIn-enter {
+  opacity: 0.01; }
+
+.fadeIn-enter.fadeIn-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in; }
+
+.fadeIn-leave {
+  opacity: 1; }
+
+.fadeIn-leave.fadeIn-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in; }
+
+.product.loading {
+  animation-duration: 600ms;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: contentLoader;
+  animation-timing-function: linear;
+  background: #f6f7f8;
+  background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+  background-size: 1000px 104px;
+  height: 200px;
+  position: relative;
+  overflow: hidden; }
+  .product.loading .product-image {
+    height: 168px;
+    width: 168px;
+    margin: 16px;
+    background: rgba(255, 255, 255, 0.25); }
+    @media (max-width: 768px) {
+      .product.loading .product-image {
+        width: auto; } }
+  .product.loading .product-text,
+  .product.loading .product-button {
+    margin: 12px 16px;
+    height: 16px;
+    background: rgba(255, 255, 255, 0.25); }
+  .product.loading .product-button {
+    position: absolute;
+    bottom: 8px;
+    width: 168px;
+    height: 36px; }
+    @media (max-width: 768px) {
+      .product.loading .product-button {
+        width: auto; } }
+
+@keyframes contentLoader {
+  0% {
+    background-position: -420px 0; }
+  100% {
+    background-position: 420px 0; } }
+
+.no-results {
+  text-align: center;
+  max-width: 520px;
+  margin: 0 auto; }
+  .no-results img {
+    width: 320px;
+    margin: 16px 0 32px 0;
+    opacity: 0.33; }
+  .no-results h2 {
+    margin-bottom: 16px;
+    color: #666; }
+  .no-results p {
+    color: #999; }
+
+.product {
+  background: #000;
+  margin: 16px;
+  width: 200px;
+  min-width: 200px;
+  border-radius: 100px 100px 5px 5px;
+  border: 2px solid #12adc3;
+  box-shadow: 8px 8px 15px rgba(65, 242, 175, 0.2);
+  transition: all .2s ease-in-out;
+  cursor: pointer; }
+  .product .product-image {
+    background-color: #98eefa;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 0 auto;
+    width: 170px;
+    height: 170px;
+    margin-top: 13px;
+    max-width: 170px;
+    max-height: 170px;
+    margin-bottom: 20px;
+    background-color: #000; }
+    .product .product-image img {
+      width: 170px;
+      height: 170px;
+      background-color: #98eefa; }
+  .product .product-name {
+    color: #12adc3;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 20px;
+    margin-bottom: 8px;
+    margin-top: 8px; }
+  .product .product-price {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 22px;
+    margin-bottom: 16px; }
+    .product .product-price:after {
+      content: " Schmeckles"; }
+  .product .product-name,
+  .product .product-price {
+    color: #12adc3;
+    padding: 0 16px;
+    text-align: center; }
+  .product .product-action {
+    padding: 16px;
+    font-size: 30px; }
+    .product .product-action button {
+      width: 100%;
+      border-radius: 30px;
+      line-height: 45px;
+      background-color: #fc7710; }
+  .product:hover {
+    transform: scale(1.2); }
+
+.modal-wrapper {
+  display: none;
+  background: rgba(0, 0, 0, 0.66);
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  height: 100%;
+  width: 100%;
+  overflow-y: hidden; }
+  .modal-wrapper.active {
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -webkit-justify-content: center; }
+  .modal-wrapper .modal {
+    width: 100%;
+    max-width: 532px;
+    padding: 16px;
+    margin: 16px;
+    background: #000;
+    position: relative;
+    border: 2px solid #12adc3;
+    box-shadow: 8px 8px 15px rgba(65, 242, 175, 0.2);
+    border-radius: 15px; }
+  .modal-wrapper button {
+    padding: 0px;
+    width: 30px;
+    height: 30px; }
+  .modal-wrapper .close {
+    padding: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    width: 30px !important;
+    height: 30px !important;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 50%; }
+
+.quick-view-details {
+  line-height: 36px;
+  height: auto;
+  margin-top: -30px; }
+  .quick-view-details .product-name {
+    color: #12adc3;
+    font-weight: bold;
+    font-size: 40px;
+    height: 40px;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    clear: both;
+    display: inline-table; }
+  .quick-view-details .produc-desc {
+    color: #12adc3;
+    font-weight: bold;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    font-size: 24px;
+    clear: both;
+    display: inline-table; }
+  .quick-view-details .product-price {
+    color: #12adc3;
+    font-weight: bold;
+    font-size: 24px;
+    float: right; }
+    .quick-view-details .product-price:after {
+      content: " Schmeckles"; }
+
+.quick-view-image img {
+  width: 80%;
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: -20px;
+  display: block; }
